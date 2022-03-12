@@ -1,0 +1,188 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    margin: 0px;
+}
+
+.top-wrapper {
+    height: 570px;
+    background-image: url(../img/kota.png);
+    background-size: cover;
+}
+
+.top-text {
+    text-align: center;
+    position: relative;
+    top: 230px;
+    color: ghostwhite;
+}
+
+    .top-text h1 {
+        opacity: 1;
+        padding-bottom: 20px;
+        font-size: 60px;
+    }
+
+    .top-text p {
+        font-size: 25px;
+    }
+
+.about-wrapper {
+    padding-top: 50px;
+    background-color: #F4F9F9;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.cont-text {
+    width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+    .cont-text p {
+        text-indent: 50px;
+    }
+
+.primacy-wrapper {
+    margin: 40px 0;
+}
+
+.primacy {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.primacy-item {
+    height: 400px;
+    width: 50%;
+}
+
+.primary-head {
+    margin-top: 120px;
+    width: 80%;
+    color: #02475E;
+}
+
+.primacy-item img {
+    height: 100%;
+}
+
+.btm-wrapper {
+    height: 400px;
+    padding-top: 100px;
+}
+
+.btm-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.btm-item {
+    width: 33%;
+}
+
+.btm-head {
+    padding-bottom: 15px;
+}
+
+.sosmed-list {
+    display: flex;
+    width: 100px;
+}
+
+.sosmed-icon {
+    width: 25%;
+    height: 20px;
+    padding-right: 15px;
+}
+
+
+.service-wrapper {
+    margin-top: 57px;
+    margin-bottom: 60px;
+}
+
+.cont-card {
+    padding-top: 50px;
+    text-align: center;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+    .cont-card h3 {
+        margin-bottom: 30px;
+    }
+
+.list-none {
+    list-style-type: none;
+    padding: 0;
+}
+
+.icon-paket {
+    width: 75%;
+    margin: 15px auto;
+    padding-top: 30px;
+}
+.tim-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.tim-item {
+    width: 50%;
+    margin-bottom: 30px;
+}
+.tim-card {
+    margin: 0 auto;
+}
+.tim-img {
+    width: 80%;
+    margin: 10px auto;
+}
+
+
+.perusahaan {
+    margin-top: 100px;
+    height: 490px;
+    text-align: center;
+}
+
+.profil-wrapper {
+    background-color: #F4F9F9;
+    text-align: center;
+}
+
+.text-company {
+    color: #02475E;
+    line-height: 30px;
+    text-align: center;
+}
+
+.foto-list {
+    padding-top: 100px;
+}
+ext-align: center;
+}
+.foto-galeri {
+    width: 85%;
+}
+.text-profil {
+    margin-top : 60px;
+    padding-bottom: 40px;
+}

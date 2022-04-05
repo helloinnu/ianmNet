@@ -41,6 +41,7 @@
                                     <a class="nav-link text-dark" href="qna">QnA</a>
                                 </li>
                             </ul>
+                            <div><a class="btn-link nav-link text-white" href="login" style="font-weight: bold; font-size: 14px">Login</a></div>
                         </div>
                     </div>
                 </div>

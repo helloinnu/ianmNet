@@ -12,6 +12,9 @@ class AdminController extends Controller
     public function AdminList(){
         return view('admin.adminlist');
     }
+    public function AdminEditAdmin(){
+        return view('admin.editadmin');
+    }
     public function AdminEditUser(){
         return view('admin.edituser');
     }

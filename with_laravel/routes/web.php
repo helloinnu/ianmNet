@@ -41,6 +41,10 @@ Route::get('/login', function () {
 });
 
 Route::get('/admin', function () {
+    return view('admin/adminlogin');
+});
+
+Route::get('/admin-home', function () {
     return view('admin/home');
 });
 
@@ -82,6 +86,18 @@ Route::get('/admin-edit-pesanan', function () {
 
 Route::get('/admin-edit-qna', function () {
     return view('admin/editqna');
+});
+
+Route::get('/admin-tambah-user', function () {
+    return view('admin/tambahuser');
+});
+
+Route::get('/admin-tambah-admin', function () {
+    return view('admin/tambahadmin');
+});
+
+Route::get('/admin-tambah-layanan', function () {
+    return view('admin/tambahlayanan');
 });
 
 Route::get('/test', function () {

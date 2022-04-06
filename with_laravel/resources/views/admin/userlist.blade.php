@@ -31,7 +31,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin-home">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -128,9 +128,12 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    <h1 class="h3 mb-2 text-gray-800">List User</h1>
+                    
+                    <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">List User</h6>
+                            <a class="m-0 font-weight-bold text-primary" href="admin-tambah-user">Tambah user</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -239,7 +242,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="admin">Logout</a>
                 </div>
             </div>
         </div>

@@ -128,70 +128,32 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <h1 class="h3 mb-2 text-gray-800">List Layanan</h1>
-                    
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <a class="m-0 font-weight-bold text-primary" href="admin-tambah-layanan">Tambah layanan</a>
+                    <h1 class="h3 mb-2 text-gray-800">Tambah Layanan</h1>
+
+                    <form action="actioneditadmin" method="POST">
+                        <input type="hidden" name="id"/>
+
+                        <div class="form-group">
+                            <label for="nama">Nama: </label>
+                            <input type="text" class="form-control" name="nama" required/>
                         </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Bandwidth</th>
-                                            <th>Description</th>
-                                            <th>Price</th>
-                                            <th>Manage</th>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Bronze</td>
-                                            <td>10 Mbps</td>
-                                            <td>Kuota unlimited tanpa FUP. Dukungan 24/7 full</td>
-                                            <td>175000</td>
-                                            <td>
-                                                <a href="admin-edit-layanan">Edit</a> | 
-                                                <a href="#" class="btn btn-danger btn-circle btn-sm">
-                                                    <i class="fas fa-trash"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Silver</td>
-                                            <td>30 Mbps</td>
-                                            <td>Kuota unlimited tanpa FUP. Dukungan 24/7 full</td>
-                                            <td>275000</td>
-                                            <td>
-                                                <a href="admin-edit-layanan">Edit</a> | 
-                                                <a href="#" class="btn btn-danger btn-circle btn-sm">
-                                                    <i class="fas fa-trash"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Gold</td>
-                                            <td>50 Mbps</td>
-                                            <td>Kuota unlimited tanpa FUP. Dukungan 24/7 full</td>
-                                            <td>375000</td>
-                                            <td>
-                                                <a href="admin-edit-layanan">Edit</a> | 
-                                                <a href="#" class="btn btn-danger btn-circle btn-sm">
-                                                    <i class="fas fa-trash"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                        <div class="form-group">
+                            <label for="bandwidth">Bandwidth: </label>
+                            <input type="text" class="form-control" name="bandwidth" required/>
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label for="price">Harga: </label>
+                            <input type="text" class="form-control" name="price" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="desc">Deskripsi: </label>
+                            <input type="text" class="form-control" name="desc" required/>
+                        </div>
+                        <div class="form-group">
+                            <input class="btn btn-primary btn-lg btn-block" type="submit" value="Simpan" name="simpan" />
+                        </div>
+                    </form>
+>
                 </div>
                 <!-- /.container-fluid -->
 

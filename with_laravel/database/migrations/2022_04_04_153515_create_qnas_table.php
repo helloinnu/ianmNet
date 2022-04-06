@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('qna_question');
             $table->string('qna_answer');
             $table->timestamps();
-
             $table->foreign('qna_user_id')->references('id')->on('users')->onDelete('cascade');
             
         });

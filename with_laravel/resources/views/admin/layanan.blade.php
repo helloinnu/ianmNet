@@ -135,6 +135,12 @@
                         <div class="card-header py-3">
                             <a class="m-0 font-weight-bold text-primary" href="admin-tambah-layanan">Tambah layanan</a>
                         </div>
+                        @if($message = Session::get('success'))
+                            <div class="alert alert-success" role="alert">
+                                {{ $message }}
+                            </div>
+                        @endif
+
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -148,6 +154,7 @@
                                             <th>Manage</th>
                                     </thead>
                                     <tbody>
+                                        {{-- @foreach($users as $item) --}}
                                         <tr>
                                             <td>1</td>
                                             <td>Bronze</td>
@@ -161,6 +168,7 @@
                                                 </a>
                                             </td>
                                         </tr>
+                                        {{-- @endforeach --}}
                                         <tr>
                                             <td>2</td>
                                             <td>Silver</td>

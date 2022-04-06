@@ -32,3 +32,4 @@ class HomeController extends Controller
         return view('qna');
     }
 }
+

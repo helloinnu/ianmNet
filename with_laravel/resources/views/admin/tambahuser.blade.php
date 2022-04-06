@@ -130,45 +130,34 @@
                 <div class="container-fluid">
                     <h1 class="h3 mb-2 text-gray-800">Tambah User</h1>
 
-                    <form action="actionedituser" method="POST">
-                        <input type="hidden" name="id"/>
+                    <form action=  method="POST">
+                        @csrf
+                        {{-- <input type="hidden" name="id"/> --}}
 
                         <div class="form-group">
-                            <label for="nama">Nama: </label>
-                            <input type="text" class="form-control" name="nama" placeholder="Nama lengkap" required/>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">No. HP: </label>
-                            <input type="text" class="form-control" name="phone" placeholder="No. HP" required/>
-                        </div>
-                        <div class="form-group">
-                            <label for="address">Alamat: </label>
-                            <input type="text" class="form-control" name="address" placeholder="Alamat" required/>
-                        </div>
-                        <div class="form-group">
-                            <label for="gender">Gender: </label>
-                            <select>
-                                <option value="L">Laki laki</option>
-                                <option value="P">Perempuan</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="username">Username: </label>
-                            <input type="text" class="form-control" name="username" placeholder="Username" required/>
+                            <label for="name">Nama: </label>
+                            <input type="name" class="form-control" name="name" placeholder="Nama lengkap" required/>
                         </div>
                         <div class="form-group">
                             <label for="password">Password: </label>
-                            <input type="text" class="form-control" name="password" placeholder="Password"  required/>
+                            <input type="password" class="form-control" name="password" placeholder="Password"  required/>
                         </div>
                         <div class="form-group">
                             <label for="email">Email: </label>
                             <input type="text" class="form-control" name="email" placeholder="Email" required/>
                         </div>
                         <div class="form-group">
+                            <label for="phone">No. HP: </label>
+                            <input type="phone" class="form-control" name="phone" placeholder="No. HP" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Alamat: </label>
+                            <input type="text" class="form-control" name="address" placeholder="Alamat" required/>
+                        </div>
+                        <div class="form-group">
                             <input class="btn btn-primary btn-lg btn-block" type="submit" value="Simpan" name="simpan" />
                         </div>
                     </form>
->
                 </div>
                 <!-- /.container-fluid -->
 

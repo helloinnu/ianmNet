@@ -135,6 +135,12 @@
                         <div class="card-header py-3">
                             <a class="m-0 font-weight-bold text-primary" href="admin-tambah-user">Tambah user</a>
                         </div>
+                        @if($message = Session::get('success'))
+                            <div class="alert alert-success" role="alert">
+                                {{ $message }}
+                            </div>
+                        @endif
+
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -142,60 +148,30 @@
                                         <tr>
                                             <th>User ID</th>
                                             <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Password</th>
                                             <th>Phone</th>
                                             <th>Address</th>
-                                            <th>Gender</th>
-                                            <th>Username</th>
-                                            <th>Password</th>
                                             <th>Manage</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach($users as $item)
                                         <tr>
-                                            <td>1</td>
-                                            <td>Spongebob Squarepants</td>
-                                            <td>+6281234567891</td>
-                                            <td>Bikini Bottom, 61</td>
-                                            <td>L</td>
-                                            <td>spongebob</td>
-                                            <td>password123</td>
+                                            <td>{{ $item->id }}</td>
+                                            <td>{{ $item->name }}</td>
+                                            <td>{{ $item->email }}</td>
+                                            <td>{{ $item->password }}</td>
+                                            <td>{{ $item->phone }}</td>
+                                            <td>{{ $item->address }}</td>
                                             <td>
-                                                <a href="admin-edit-user">Edit</a> | 
+                                                <a href="/tampil-update/{{ $item->id }}">Edit</a> 
                                                 <a href="#" class="btn btn-danger btn-circle btn-sm">
                                                     <i class="fas fa-trash"></i>
                                                 </a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Patrick Star</td>
-                                            <td>+6289876543210</td>
-                                            <td>Bikini Bottom, 63</td>
-                                            <td>L</td>
-                                            <td>patrick</td>
-                                            <td>password321</td>
-                                            <td>
-                                                <a href="admin-edit-user">Edit</a> | 
-                                                <a href="#" class="btn btn-danger btn-circle btn-sm">
-                                                    <i class="fas fa-trash"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Squidward Tentacles</td>
-                                            <td>+6282233445566</td>
-                                            <td>Bikini Bottom, 62</td>
-                                            <td>L</td>
-                                            <td>tentacles</td>
-                                            <td>tenta123</td>
-                                            <td>
-                                                <a href="admin-edit-user">Edit</a> | 
-                                                <a href="#" class="btn btn-danger btn-circle btn-sm">
-                                                    <i class="fas fa-trash"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

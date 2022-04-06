@@ -130,45 +130,33 @@
                 <div class="container-fluid">
                     <h1 class="h3 mb-2 text-gray-800">Edit User</h1>
 
-                    <form action="actionedituser" method="POST">
+                    <form action="/save-user/{{ $user->id }}" method="POST">
                         <input type="hidden" name="id"/>
 
                         <div class="form-group">
                             <label for="nama">Nama: </label>
-                            <input type="text" class="form-control" name="nama" placeholder="Nama lengkap" required/>
+                            <input type="text" class="form-control" name="nama" value="{{ $user->name }}" required/>
                         </div>
                         <div class="form-group">
                             <label for="phone">No. HP: </label>
-                            <input type="text" class="form-control" name="phone" placeholder="No. HP" required/>
+                            <input type="text" class="form-control" name="phone" value="{{ $user->phone }}" required/>
                         </div>
                         <div class="form-group">
                             <label for="address">Alamat: </label>
-                            <input type="text" class="form-control" name="address" placeholder="Alamat" required/>
+                            <input type="text" class="form-control" name="address" value="{{ $user->address}}"required/>
                         </div>
-                        <div class="form-group">
-                            <label for="gender">Gender: </label>
-                            <select>
-                                <option value="L">Laki laki</option>
-                                <option value="P">Perempuan</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="username">Username: </label>
-                            <input type="text" class="form-control" name="username" placeholder="Username" required/>
-                        </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="password">Password: </label>
-                            <input type="text" class="form-control" name="password" placeholder="Password"  required/>
-                        </div>
+                            <input type="text" class="form-control" name="password" value="{{ $user->password}}"  required/>
+                        </div> --}}
                         <div class="form-group">
                             <label for="email">Email: </label>
-                            <input type="text" class="form-control" name="email" placeholder="Email" required/>
+                            <input type="text" class="form-control" name="email" value="{{ $user->email }}"required/>
                         </div>
                         <div class="form-group">
                             <input class="btn btn-primary btn-lg btn-block" type="submit" value="Simpan" name="simpan" />
                         </div>
                     </form>
->
                 </div>
                 <!-- /.container-fluid -->
 

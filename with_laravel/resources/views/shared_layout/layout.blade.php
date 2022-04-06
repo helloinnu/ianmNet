@@ -35,7 +35,7 @@
                                     <a class="nav-link text-dark" href="layanan">Layanan</a>
                                 </li>
                                 <li class="nav-item px-2">
-                                    <a class="nav-link text-dark" href="team">Team</a>
+                                    <a class="nav-link text-dark" href="tim">Team</a>
                                 </li>
                                 <li class="nav-item px-2">
                                     <a class="nav-link text-dark" href="qna">QnA</a>

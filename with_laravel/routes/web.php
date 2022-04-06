@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,95 +15,48 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/profil', function () {
-    return view('profil');
-});
+Route::get('/profil', [HomeController::class, 'indexProfil']);
 
-Route::get('/perusahaan', function () {
-    return view('perusahaan');
-});
-Route::get('/layanan', function () {
-    return view('layanan');
-});
+Route::get('/perusahaan', [HomeController::class, 'indexPerusahaan']);
 
-Route::get('/team', function () {
-    return view('team');
-});
+Route::get('/layanan', [HomeController::class, 'indexLayanan']);
 
-Route::get('/qna', function () {
-    return view('qna');
-});
+Route::get('/tim', [HomeController::class, 'indexTim']);
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/qna', [HomeController::class, 'indexQnA']);
 
-Route::get('/admin', function () {
-    return view('admin/adminlogin');
-});
+Route::get('/dashboard', [AdminController::class, 'AdminHome'])->middleware(['auth'])->name('dashboard');
 
-Route::get('/admin-home', function () {
-    return view('admin/home');
-});
+Route::get('/admin-user', [AdminController::class, 'AdminUserList'])->middleware(['auth']);
 
-Route::get('/admin-user', function () {
-    return view('admin/userlist');
-});
+Route::get('/admin-admin', [AdminController::class, 'AdminList'])->middleware(['auth']);
 
-Route::get('/admin-admin', function () {
-    return view('admin/adminlist');
-});
+Route::get('/admin-layanan', [AdminController::class, 'AdminLayanan'])->middleware(['auth']);
 
-Route::get('/admin-layanan', function () {
-    return view('admin/layanan');
-});
+Route::get('/admin-pesanan', [AdminController::class, 'AdminPesanan'])->middleware(['auth']);
 
-Route::get('/admin-pesanan', function () {
-    return view('admin/pesanan');
-});
+Route::get('/admin-qna', [AdminController::class, 'AdminQna'])->middleware(['auth']);
 
-Route::get('/admin-qna', function () {
-    return view('admin/qna');
-});
+Route::get('/admin-edit-admin', [AdminController::class, 'AdminEditAdmin'])->middleware(['auth']);
 
-Route::get('/admin-edit-user', function () {
-    return view('admin/edituser');
-});
+Route::get('/admin-edit-user', [AdminController::class, 'AdminEditUser'])->middleware(['auth']);
 
-Route::get('/admin-edit-admin', function () {
-    return view('admin/editadmin');
-});
+Route::get('/admin-edit-layanan', [AdminController::class, 'AdminEditLayanan'])->middleware(['auth']);
 
-Route::get('/admin-edit-layanan', function () {
-    return view('admin/editlayanan');
-});
+Route::get('/admin-edit-pesanan', [AdminController::class, 'AdminEditPesanan'])->middleware(['auth']);
 
-Route::get('/admin-edit-pesanan', function () {
-    return view('admin/editpesanan');
-});
+Route::get('/admin-edit-qna', [AdminController::class, 'AdminEditQna'])->middleware(['auth']);
 
-Route::get('/admin-edit-qna', function () {
-    return view('admin/editqna');
-});
+Route::get('/admin-tambah-user', [AdminController::class, 'AdminAddUser'])->middleware(['auth']);
 
-Route::get('/admin-tambah-user', function () {
-    return view('admin/tambahuser');
-});
+Route::get('/admin-tambah-admin', [AdminController::class, 'AdminAddAdmin'])->middleware(['auth']);
 
-Route::get('/admin-tambah-admin', function () {
-    return view('admin/tambahadmin');
-});
+Route::get('/admin-tambah-layanan', [AdminController::class, 'AdminAddLayanan'])->middleware(['auth']);
 
-Route::get('/admin-tambah-layanan', function () {
-    return view('admin/tambahlayanan');
-});
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
 
-Route::get('/test', function () {
-    return view('test');
-});
-
-
+require __DIR__.'/auth.php';

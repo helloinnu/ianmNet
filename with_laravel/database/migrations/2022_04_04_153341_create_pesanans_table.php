@@ -22,7 +22,7 @@ return new class extends Migration
             $table->timestamps();
             $table->timestamp('ps_confirm');
 
-            $table->foreign('ps_user_id')->references('user_id')->on('users')->onDelete('cascade');
+            $table->foreign('ps_user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('ps_ln_id')->references('ln_id')->on('layanans')->onDelete('cascade');
         });
     }

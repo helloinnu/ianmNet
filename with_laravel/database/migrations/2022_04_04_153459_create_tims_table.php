@@ -20,10 +20,12 @@ return new class extends Migration
             $table->string('tim_password');
             $table->string('tim_role');
             $table->string('tim_email');
+            $table->string('tim_addres');            
             $table->string('tim_phone');
-            $table->string('tim_addres');
+            $table->string('tim_photo');
+            $table->string('tim_desc');
 
-            $table->timestamps();
+            // $table->timestamps();
         });
     }
 

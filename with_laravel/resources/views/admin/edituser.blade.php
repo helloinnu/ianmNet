@@ -159,7 +159,7 @@
                             <input class="btn btn-primary btn-lg btn-block" type="submit" value="Simpan" name="simpan" />
                         </div>
                     </form>
-                </div>
+                </div> 
                 <!-- /.container-fluid -->
 
             </div>

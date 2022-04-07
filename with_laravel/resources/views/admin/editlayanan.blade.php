@@ -12,13 +12,13 @@
     <title>IANM NET Admin</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -31,7 +31,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin-home">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -43,7 +43,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="dashboard" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>List Akun</span>
@@ -130,30 +130,29 @@
                 <div class="container-fluid">
                     <h1 class="h3 mb-2 text-gray-800">Edit Layanan</h1>
 
-                    <form action="actioneditadmin" method="POST">
-                        <input type="hidden" name="id"/>
+                    <form action="/save-layanan/{{ $layanan->id }}" method="POST">
+                        @csrf
 
                         <div class="form-group">
                             <label for="nama">Nama: </label>
-                            <input type="text" class="form-control" name="nama" required/>
+                            <input type="text" value="{{ $layanan->ln_name }}" class="form-control" name="ln_name" required/>
                         </div>
                         <div class="form-group">
                             <label for="bandwidth">Bandwidth: </label>
-                            <input type="text" class="form-control" name="bandwidth" required/>
+                            <input type="text" value="{{ $layanan->ln_bandwidth }}" class="form-control" name="ln_bandwidth" required/>
                         </div>
                         <div class="form-group">
                             <label for="price">Harga: </label>
-                            <input type="text" class="form-control" name="price" required/>
+                            <input type="text" value="{{ $layanan->ln_price }}" class="form-control" name="ln_price" required/>
                         </div>
                         <div class="form-group">
                             <label for="desc">Deskripsi: </label>
-                            <input type="text" class="form-control" name="desc" required/>
+                            <input type="text" value="{{ $layanan->ln_describe }}" class="form-control" name="ln_describe" required/>
                         </div>
                         <div class="form-group">
-                            <input class="btn btn-primary btn-lg btn-block" type="submit" value="Simpan" name="simpan" />
+                            <input class="btn btn-primary btn-lg btn-block" type="submit" value="Simpan"/>
                         </div>
                     </form>
->
                 </div>
                 <!-- /.container-fluid -->
 

@@ -169,12 +169,12 @@
                                             <td>{{ $item->phone }}</td>
                                             <td>{{ $item->address }}</td>
                                             <td>
-                                                <a href="/tampil-update/{{ $item->id }}">Edit</a>
+                                                <a href="/tampil-update-user/{{ $item->id }}">Edit</a>
                                                 <form action="/delete-user/{{ $item->id }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button>
-                                                        <a class="btn btn-danger btn-circle btn-sm">
+                                                    <button class="btn btn-danger btn-circle btn-sm">
+                                                        
                                                             <i class="fas fa-trash"></i>
                                                         </a>
                                                     </button>

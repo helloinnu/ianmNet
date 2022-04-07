@@ -14,12 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('layanans', function (Blueprint $table) {
-            $table->bigIncrements('ln_id');
+            $table->bigIncrements('id');
             $table->string('ln_name');
-            $table->integer('ln_bandwith');
+            $table->integer('ln_bandwidth');
             $table->string('ln_describe');
             $table->integer('ln_price');
-            // $table->timestamps();
+            $table->timestamps();
         });
     }
 

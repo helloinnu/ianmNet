@@ -45,17 +45,19 @@ Route::get('/admin-edit-user', [UserController::class, 'Edit'])->middleware(['au
 Route::get('/admin-tambah-user', [UserController::class, 'Add'])->middleware(['auth']);
 Route::post('/insert-user', [UserController::class, 'InsertUser'])->middleware(['auth']);
 
-Route::get('/tampil-update/{id}', [UserController::class, 'TampilData'])->middleware(['auth']);
+Route::get('/tampil-update-user/{id}', [UserController::class, 'TampilData'])->middleware(['auth']);
 Route::post('/save-user/{id}', [UserController::class, 'SaveUser'])->middleware(['auth']);
 Route::delete('/delete-user/{id}', [UserController::class, 'DeleteUser'])->middleware(['auth']);
 
 //LayananController
-Route::get('/admin-layanan', [LayananController::class, 'Show'])->middleware(['auth']);
+Route::get('/admin-layanan', [LayananController::class, 'Show'])->middleware(['auth'])->name('listLayanan');
 Route::get('/admin-tambah-layanan', [LayananController::class, 'Add'])->middleware(['auth']);
-Route::post('/insert-layanan', [UserController::class, 'InserLayanan'])->middleware(['auth']);
+Route::post('/insert-layanan', [LayananController::class, 'InsertLayanan'])->middleware(['auth']);
 Route::get('/admin-edit-layanan', [LayananController::class, 'Edit'])->middleware(['auth']);
 
-
+Route::get('/tampil-update/{id}', [LayananController::class, 'TampilData'])->middleware(['auth']);
+Route::post('/save-layanan/{id}', [LayananController::class, 'SaveLayanan'])->middleware(['auth']);
+Route::delete('/delete-layanan/{id}', [LayananController::class, 'DeleteLayanan'])->middleware(['auth']);
 
 
 

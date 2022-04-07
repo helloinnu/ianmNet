@@ -130,30 +130,30 @@
                 <div class="container-fluid">
                     <h1 class="h3 mb-2 text-gray-800">Tambah Layanan</h1>
 
-                    <form action="actioneditadmin" method="POST">
-                        <input type="hidden" name="id"/>
+                    <form action="insert-layanan" method="POST">
+                        @csrf
+                        {{-- <input type="hidden" name="id"/> --}}
 
                         <div class="form-group">
-                            <label for="nama">Nama: </label>
-                            <input type="text" class="form-control" name="nama" required/>
+                            <label for="nama">Nama Paket: </label>
+                            <input type="text" class="form-control" name="ln_name" required/>
                         </div>
                         <div class="form-group">
                             <label for="bandwidth">Bandwidth: </label>
-                            <input type="text" class="form-control" name="bandwidth" required/>
+                            <input type="text" class="form-control" name="ln_bandwidth" required/>
                         </div>
                         <div class="form-group">
                             <label for="price">Harga: </label>
-                            <input type="text" class="form-control" name="price" required/>
+                            <input type="text" class="form-control" name="ln_price" required/>
                         </div>
                         <div class="form-group">
                             <label for="desc">Deskripsi: </label>
-                            <input type="text" class="form-control" name="desc" required/>
+                            <input type="text" class="form-control" name="ln_describe" required/>
                         </div>
                         <div class="form-group">
                             <input class="btn btn-primary btn-lg btn-block" type="submit" value="Simpan" name="simpan" />
                         </div>
                     </form>
->
                 </div>
                 <!-- /.container-fluid -->
 

@@ -146,7 +146,7 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
+                                            {{-- <th>ID</th> --}}
                                             <th>Name</th>
                                             <th>Bandwidth</th>
                                             <th>Description</th>
@@ -154,47 +154,27 @@
                                             <th>Manage</th>
                                     </thead>
                                     <tbody>
-                                        {{-- @foreach($users as $item) --}}
+                                        @foreach($layanans as $item)
                                         <tr>
-                                            <td>1</td>
-                                            <td>Bronze</td>
-                                            <td>10 Mbps</td>
-                                            <td>Kuota unlimited tanpa FUP. Dukungan 24/7 full</td>
-                                            <td>175000</td>
+                                            <td>{{ $item->ln_name }}</td>
+                                            <td>{{ $item->ln_bandwidth }}</td>
+                                            <td>{{ $item->ln_describe }}</td>
+                                            <td>{{ $item->ln_price }}</td>
+                                            {{-- <td>{{ $item->ln_name }}</td> --}}
                                             <td>
-                                                <a href="admin-edit-layanan">Edit</a> | 
-                                                <a href="#" class="btn btn-danger btn-circle btn-sm">
-                                                    <i class="fas fa-trash"></i>
-                                                </a>
+                                                <a href="/tampil-update/{{ $item->id }}">Edit</a>
+                                                <form action="/delete-layanan/{{ $item->id }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger btn-circle btn-sm">
+                                                        
+                                                            <i class="fas fa-trash"></i>
+                                                        </a>
+                                                    </button>
+                                                </form> 
                                             </td>
                                         </tr>
-                                        {{-- @endforeach --}}
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Silver</td>
-                                            <td>30 Mbps</td>
-                                            <td>Kuota unlimited tanpa FUP. Dukungan 24/7 full</td>
-                                            <td>275000</td>
-                                            <td>
-                                                <a href="admin-edit-layanan">Edit</a> | 
-                                                <a href="#" class="btn btn-danger btn-circle btn-sm">
-                                                    <i class="fas fa-trash"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Gold</td>
-                                            <td>50 Mbps</td>
-                                            <td>Kuota unlimited tanpa FUP. Dukungan 24/7 full</td>
-                                            <td>375000</td>
-                                            <td>
-                                                <a href="admin-edit-layanan">Edit</a> | 
-                                                <a href="#" class="btn btn-danger btn-circle btn-sm">
-                                                    <i class="fas fa-trash"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

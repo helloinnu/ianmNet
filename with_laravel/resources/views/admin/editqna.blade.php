@@ -12,13 +12,13 @@
     <title>IANM NET Admin</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -128,11 +128,11 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <h1 class="h3 mb-2 text-gray-800">Tambah Jawaban</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Edit Jawaban</h1>
 
-                    <form action="actioneditqna" method="POST">
+                    <form action="/save-qna/{id}" method="POST">
                         <input type="hidden" name="id"/>
-                        <textarea id="answer" name="answer" rows="4" cols="50"> </textarea>
+                        <textarea id="answer" name="qna_answer" rows="4" cols="50" class="form-control mb-4"> {{ $qnas->qna_answer }} </textarea>
                         <div class="form-group">
                             <input class="btn btn-primary btn-lg btn-block" type="submit" value="Simpan" name="simpan" />
                         </div>

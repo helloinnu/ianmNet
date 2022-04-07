@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use phpDocumentor\Reflection\Types\Nullable;
 
 return new class extends Migration
 {
@@ -14,8 +15,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('qnas', function (Blueprint $table) {
-            $table->bigIncrements('qna_id');
-            $table->unsignedBigInteger('qna_user_id');
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('qna_user_id')->nullable();
             $table->string('qna_question');
             $table->string('qna_answer');
             $table->timestamps();

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\QnaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
@@ -59,7 +60,10 @@ Route::get('/tampil-update/{id}', [LayananController::class, 'TampilData'])->mid
 Route::post('/save-layanan/{id}', [LayananController::class, 'SaveLayanan'])->middleware(['auth']);
 Route::delete('/delete-layanan/{id}', [LayananController::class, 'DeleteLayanan'])->middleware(['auth']);
 
-
+//QnAController
+Route::get('/admin-qna', [QnaController::class, 'Show'])->middleware(['auth'])->name('listQna');
+Route::get('/admin-edit-qna/{id}', [QnaController::class, 'TampilData'])->middleware(['auth']);
+Route::post('/save-qna/{id}', [QnaController::class, 'SaveQna'])->middleware(['auth']);
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

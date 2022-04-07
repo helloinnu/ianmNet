@@ -137,24 +137,23 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
+                                            <th>No</th>
                                             <th>Question</th>
                                             <th>Answer</th>
                                             <th>Manage</th>
                                     </thead>
                                     <tbody>
+                                        @php
+                                            $no = 1
+                                        @endphp
+                                        @foreach($qnas as $item)
                                         <tr>
-                                            <td>1</td>
-                                            <td>Bagaimana cara masuk ke pengaturan router?</td>
-                                            <td>Masih dibutuhkan investor pada startup ini. Peluang usaha ini memiliki potensi yang besar untuk dapat terus berjalan dan berkembang. Hubungi kami jika anda ingin ikut berinvestasi pada kami.</td>
-                                            <td><a href="admin-edit-qna">Edit answer</a> </td>
+                                            <td>{{ $no++ }}</td>
+                                            <td>{{ $item->qna_question }}</td>
+                                            <td>{{ $item->qna_answer }}</td>
+                                            <td><a href="/admin-edit-qna/{{ $item->id }}">Edit answer</a> </td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Bagaimana cara mengubah password router?</td>
-                                            <td>Masih dibutuhkan investor pada startup ini. Peluang usaha ini memiliki potensi yang besar untuk dapat terus berjalan dan berkembang. Hubungi kami jika anda ingin ikut berinvestasi pada kami.</td>
-                                            <td><a href="admin-edit-qna">Edit answer</a> </td>
-                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

@@ -47,7 +47,7 @@ Route::post('/insert-user', [UserController::class, 'InsertUser'])->middleware([
 
 Route::get('/tampil-update/{id}', [UserController::class, 'TampilData'])->middleware(['auth']);
 Route::post('/save-user/{id}', [UserController::class, 'SaveUser'])->middleware(['auth']);
-Route::post('/insert-user', [UserController::class, 'InsertUser'])->middleware(['auth']);
+Route::delete('/delete-user/{id}', [UserController::class, 'DeleteUser'])->middleware(['auth']);
 
 //LayananController
 Route::get('/admin-layanan', [LayananController::class, 'Show'])->middleware(['auth']);

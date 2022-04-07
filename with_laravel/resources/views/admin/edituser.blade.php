@@ -12,13 +12,13 @@
     <title>IANM NET Admin</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -131,12 +131,17 @@
                     <h1 class="h3 mb-2 text-gray-800">Edit User</h1>
 
                     <form action="/save-user/{{ $user->id }}" method="POST">
+                        @csrf
                         <input type="hidden" name="id"/>
 
                         <div class="form-group">
                             <label for="nama">Nama: </label>
-                            <input type="text" class="form-control" name="nama" value="{{ $user->name }}" required/>
+                            <input type="text" class="form-control" name="name" value="{{ $user->name }}" required/>
                         </div>
+                        <div class="form-group">
+                            <label for="email">Email: </label>
+                            <input type="text" class="form-control" name="email" value="{{ $user->email }}"required/>
+                        </div>                    
                         <div class="form-group">
                             <label for="phone">No. HP: </label>
                             <input type="text" class="form-control" name="phone" value="{{ $user->phone }}" required/>
@@ -149,10 +154,7 @@
                             <label for="password">Password: </label>
                             <input type="text" class="form-control" name="password" value="{{ $user->password}}"  required/>
                         </div> --}}
-                        <div class="form-group">
-                            <label for="email">Email: </label>
-                            <input type="text" class="form-control" name="email" value="{{ $user->email }}"required/>
-                        </div>
+                        
                         <div class="form-group">
                             <input class="btn btn-primary btn-lg btn-block" type="submit" value="Simpan" name="simpan" />
                         </div>

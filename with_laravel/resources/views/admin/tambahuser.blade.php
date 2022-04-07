@@ -130,7 +130,7 @@
                 <div class="container-fluid">
                     <h1 class="h3 mb-2 text-gray-800">Tambah User</h1>
 
-                    <form action=  method="POST">
+                    <form action="/insert-user"  method="POST">
                         @csrf
                         {{-- <input type="hidden" name="id"/> --}}
 

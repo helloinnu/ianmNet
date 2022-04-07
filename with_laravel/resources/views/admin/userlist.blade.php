@@ -146,29 +146,39 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>User ID</th>
+                                            <th>No</th>
                                             <th>Name</th>
                                             <th>Email</th>
-                                            <th>Password</th>
+                                            {{-- <th>Password</th> --}}
                                             <th>Phone</th>
                                             <th>Address</th>
                                             <th>Manage</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @php
+                                            $no = 1
+                                        @endphp
                                         @foreach($users as $item)
+                                        
                                         <tr>
-                                            <td>{{ $item->id }}</td>
+                                            <td>{{ $no++ }}</td>
                                             <td>{{ $item->name }}</td>
                                             <td>{{ $item->email }}</td>
-                                            <td>{{ $item->password }}</td>
+                                            {{-- <td>{{ $item->password }}</td> --}}
                                             <td>{{ $item->phone }}</td>
                                             <td>{{ $item->address }}</td>
                                             <td>
-                                                <a href="/tampil-update/{{ $item->id }}">Edit</a> 
-                                                <a href="#" class="btn btn-danger btn-circle btn-sm">
-                                                    <i class="fas fa-trash"></i>
-                                                </a>
+                                                <a href="/tampil-update/{{ $item->id }}">Edit</a>
+                                                <form action="/delete-user/{{ $item->id }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button>
+                                                        <a class="btn btn-danger btn-circle btn-sm">
+                                                            <i class="fas fa-trash"></i>
+                                                        </a>
+                                                    </button>
+                                                </form> 
                                             </td>
                                         </tr>
                                         @endforeach

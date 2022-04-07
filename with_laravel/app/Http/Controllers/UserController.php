@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 // use Illuminate\Foundation\Auth\User;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -22,9 +23,18 @@ class UserController extends Controller
         return view('admin.tambahuser');
     }
     public function InsertUser(Request $request){
-        User::create($request->all());
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'address' => $request->address,
+            'phone' => $request->phone,
+        ]);
+        
         return redirect()->route('listUsers')->with('success','Data berhasil ditambahkan');
     }
+    
+    
     public function TampilData($id){
         $user = User::find($id);
         // dd($user);
@@ -37,4 +47,13 @@ class UserController extends Controller
         
         return redirect()->route('listUsers')->with('success','Data berhasil diubah');
     }
+    public function DeleteUser($id){
+        $user = User::find($id);
+        // dd($user);
+        $user->delete();
+        
+        return redirect()->route('listUsers')->with('success','Data berhasil dihapus');
+    }
+    
+
 }

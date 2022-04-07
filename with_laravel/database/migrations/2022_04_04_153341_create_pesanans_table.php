@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('ps_address');
             $table->string('ps_status');
             $table->timestamps();
-            $table->timestamp('ps_confirm');
+            $table->timestamp('ps_confirm')->default(\DB::raw('CURRENT_TIMESTAMP'));
 
             $table->foreign('ps_user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('ps_ln_id')->references('id')->on('layanans')->onDelete('cascade');
